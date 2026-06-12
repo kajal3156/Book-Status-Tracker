@@ -1,5 +1,4 @@
-from flask import Flask, request
-
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
@@ -18,44 +17,46 @@ def home():
         progress = (read / pages) * 100
 
         if read == pages:
-            status = "FINISHED 🎉"
+            status = "Finished Reading!! 🎉"
         else:
-            status = "STILL READING 📖"
+            status = "Still Reading!! 📖"
 
         return f"""
-        <h1>📚 Book Status Tracker</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
 
-        <p><b>Book:</b> {name}</p>
-        <p><b>Total Pages:</b> {pages}</p>
-        <p><b>Pages Read:</b> {read}</p>
-        <p><b>Pages Left:</b> {left}</p>
-        <p><b>Progress:</b> {progress:.2f}%</p>
-        <p><b>Status:</b> {status}</p>
+<body>
 
-        <br>
-        <a href="/">Calculate Another Book</a>
-        """
+<div class="container">
 
-    return """
-    <h1>📚 Book Status Tracker</h1>
+<h1>Reading Tracker 📚🌸</h1>
 
-    <form method="POST">
+<div class="result-card">
 
-        <p>Book Name</p>
-        <input type="text" name="book" required>
+<h2>{name}</h2>
 
-        <p>Total Pages</p>
-        <input type="number" name="pages" required>
+<p><b>Total Pages:</b> {pages}</p>
+<p><b>Pages Read:</b> {read}</p>
+<p><b>Pages Left:</b> {left}</p>
+<p><b>Progress:</b> {progress:.2f}%</p>
+<p><b>Status:</b> {status}</p>
 
-        <p>Pages Read</p>
-        <input type="number" name="read" required>
+<a href="/" class="btn">
+Track Another Book ✨
+</a>
 
-        <br><br>
+</div>
 
-        <button type="submit">Calculate</button>
+</div>
 
-    </form>
-    """
+</body>
+</html>
+"""
+
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=5004)
