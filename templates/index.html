@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Reading Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
-
     <h1>Reading Tracker 📚🌸</h1>
-
     <form method="POST">
-
         <input type="text"
                name="book"
                placeholder="Book Name"
                required>
-
         <input type="number"
                name="pages"
                placeholder="Total Pages"
                required>
-
         <input type="number"
                name="read"
                placeholder="Pages Read"
                required>
-
         <button type="submit">
             Track Progress ✨
         </button>
-
     </form>
-
 </div>
-
 </body>
 </html>
