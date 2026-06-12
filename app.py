@@ -21,7 +21,7 @@ def home():
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<div class="container">
+<div class="container result-container">
 <h1>Reading Tracker 📚🌸</h1>
 <div class="result-card">
 <h2>{name}</h2>
