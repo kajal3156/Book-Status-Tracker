@@ -3,8 +3,7 @@ body{
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:flex-start;
-    padding-top:120px;;
+    align-items:center;
     background:linear-gradient(
         135deg,
         #ffd6e8,
@@ -15,7 +14,7 @@ body{
 }
 .container{
     background:white;
-    width:85%;
+    width:90%;
     max-width:500px;
     padding:25px;
     border-radius:25px;
@@ -78,4 +77,12 @@ p{
     font-size:22px;
     margin:18px 0;
     line-height:1.5;
+}
+.container p{
+    font-size:20px;
+    line-height:1.8;
+}
+.container h2{
+    font-size:42px;
+    color:#8a4fff;
 }
