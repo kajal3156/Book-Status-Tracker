@@ -14,8 +14,8 @@ body{
 }
 .container{
     background:white;
-    width:80%;
-    max-width:380px;
+    width:85%;
+    max-width:500px;
     padding:25px;
     border-radius:25px;
     text-align:center;
@@ -29,6 +29,7 @@ h1{
 }
 input{
     width:90%;
+    max-width:400px;
     padding:12px;
     margin:10px 0;
     border:1px solid #ddd;
@@ -68,7 +69,7 @@ button:hover{
     }
 }
 h2{
-    font-size:32px;
+    font-size:42px;
     color:#8a4fff;
     margin-bottom:25px;
 }
